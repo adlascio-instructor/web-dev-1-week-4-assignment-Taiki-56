@@ -6,28 +6,40 @@
     --primary-color: #ffc632;
   }
 
-  #outer {
-    display: grid;
-  }
+ 
 
-  body {
+  body {      /* grid は一つ下の箱に対してのみ働く   */
     background-color: var(--background);
     color: var(--text-base);
-    width: auto;
+    display: grid;
+    grid-template-columns: 200px 200px;
+    grid-template-rows: 60px 90px 160px 45px 50px 40px;
+    /* margin: 0; */
   }
 
   .header {
+    grid-column: 1/3;
+    grid-row: 1/2;
     display: flex;
+    padding: 20px 0 0 10px;
   }
 
   .header-logo {
     width: 60px;
     height: 40px;
+    padding-right: 5px;
   }
-
 
   h4, h3 {
     color: var(--text-title);
+  }
+
+  .login-top {
+    grid-column: 1/3;
+    grid-row: 2/3 ;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
   }
 
   .login-title {
@@ -46,6 +58,15 @@
     margin: 0;
     }
 
+  .login-form {
+    width: 100%;
+    grid-column: 1/3;
+    grid-row: 3/4;
+  }
+
+  /* .label {
+    padding: 20px 0 5px 0;
+  } */
 
   fieldset {
     border: none;
@@ -55,22 +76,65 @@
 
   .boxes {
     border: solid;
-    background-color: white;
+    margin: 5px 8px 20px 0;
+    border-radius: 5px;
+    accent-color: var(--primary-color);
+
   }
 
+  .boxes :hover {
+    /* color: var(--primary-color); */
+  }
+
+
   .box-icon {
-    margin-top: 5px;
+    margin: 5px 0 0 8px;
   }
 
   .form-box {
     border: none;
+    background-color: var(--background);
+    padding-bottom: 5px;
   }
 
-  #inner4 {
+  .checkbox {
+    margin-left: 6px;
     display:flex;
+    grid-column: 1/2;
+    grid-row: 4/5;
+  }
+
+  .remind-me {
+    accent-color: var(--primary-color);
+  }
+ 
+
+  .checkbox p {
+    margin: 14px 0 0 1px;
   }
   
-  #inner5 {
-    /* display: flex;
-    justify-content: flex-end; */
+  .forgot-passward {
+    grid-column: 2/3;
+    grid-row: 4/5;
+    margin: 14px 18px 0 0;
+    display: flex;
+    justify-content: flex-end;
+    color: var(--primary-color);
+  }
+
+  .login-btn {
+    grid-column: 1/3;
+    grid-row: 5/6;
+    margin: 0 18px 0 8px;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+  }
+
+  .sign-up {
+    grid-column: 1/3;
+    grid-row: 6/7;
+    text-align: center;
+    margin-top: 15px;
+    color: var(--primary-color);
+
   }
